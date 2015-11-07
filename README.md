@@ -67,3 +67,39 @@ wsgiref в коллбек возвращать будет все.
 
 ## Создание скрипта установки модуля:
 
+Скрипт должен называться `setup.py`:
+Формат:
+```
+from distutils.core import setup
+import http_server
+
+setup(
+    name='sandbox',
+    version='0.0.1',
+    py_modules=['http_server', 'start', 'server.http_handler'],
+    author='',
+    author_email='',
+    url='',
+    description='Python library for',
+)
+```
+Внутри можно даже компилировать C++.
+
+чтобы установить такой пакет есть 3 варианта:
+1. Скачать его из репы
+Затем запустить `setup.py`:
+```
+python setup.py install
+```
+
+2. Скачать его через pip
+
+```
+pip install -e git+http://ruch-net.ru:10022/artem/python-sandbox.git#egg=sandbox
+```
+
+3. Положить его в архиве на FTP сервер, добавить этот FTP в конфиги PIP.
+И тогда он скачается:
+```
+pip install sandbox
+```
