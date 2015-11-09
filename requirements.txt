@@ -1,4 +1,3 @@
 requests
 validators
 wsgiref
--e git+http://ruch-net.ru:10022/artem/python-sandbox.git#egg=sandbox
